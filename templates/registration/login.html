@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+Member Login
+{% endblock title %}
+
+{% block content %}
+    <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-4 col-md-6 col-sm-8">
+        <div class="text-center fs-2 fw-bolder mb-4" style="color: #0b5ed7;">Articuno Coding LLP</div>
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Log in</h3>
+            <form method="post" novalidate>
+              {% csrf_token %}
+              {{form | crispy}}
+              <button type="submit" class="btn btn-primary" style="width: 100%;">Log in</button>
+            </form>
+          </div>
+          <div class="card-footer text-muted text-center">
+            New to Articuno Coding LLP? <a href="{% url 'users:signup' %}">Sign Up</a>
+          </div>
+        </div>
+        <div class="forgot text-center py-2">
+          <small>
+            <a href="{% url 'users:password_reset' %}" class="text-muted">Forgot your password?</a>
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock content %}
