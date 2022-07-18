@@ -4,7 +4,7 @@ from .views import dashboard, signup
 app_name = "users"
 
 urlpatterns = [
-    path('', dashboard, name='dashboard'),
+    path('dashboard/', dashboard, name='dashboard'),
     path('signup/', signup, name='signup'),
     path('accounts/', include('django.contrib.auth.urls')),
 ]

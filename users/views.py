@@ -20,7 +20,7 @@ def signup(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect(settings.SIGNUP_REDIRECT_URL, pk=request.user.pk)
+            return redirect(settings.SIGNUP_REDIRECT_URL)
         else:
             return render(request, 'registration/signup.html', {'form': form})
     else:

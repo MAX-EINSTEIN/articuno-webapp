@@ -5,5 +5,21 @@
 {% endblock %}
 
 {% block content %}
-Welcome, {{ user.first_name }} {{ user.last_name }}!
+<div class="row justify-content-center align-items-center">
+    <div class="col-lg-4 col-md-6 col-sm-8">
+        <div class="fs-5 fw-bolder mb-4">Welcome to Articuno Coding LLP!</div> 
+        <div class="card" style="width: 20rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{ user.first_name }} {{ user.last_name }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ user.username }}</h6>
+                <p class="card-text"> 
+                    <strong>Email     :</strong> {{ user.email }} <br/>
+                    <strong>Joined On :</strong> {{ user.date_joined | date}} 
+                </p>
+                <a href="{% url 'users:logout' %}" class="btn btn-primary">Log Out</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock content %}
